@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+    <title>
+        Luvly
+    </title>
+  <link rel="stylesheet" href="css/LuvlyBurger.css">
+  <nav role="navigation">
+    <div id="menuToggle">
+      <!--
+      A fake / hidden checkbox is used as click reciever,
+      so you can use the :checked selector on it.
+      -->
+      <input type="checkbox" />
+      
+      <!--
+      Some spans to act as a hamburger.
+      
+      They are acting like a real hamburger,
+      not that McDonalds stuff.
+      -->
+      <span></span>
+      <span></span>
+      <span></span>
+      
+      <!--
+      Too bad the menu has to be inside of the button
+      but hey, it's pure CSS magic.
+      -->
+      <ul id="menu">
+        <a href="LuvlyHome.html"><li>Home</li></a>
+        <a href="LuvlyDirections.html"><li>Direction Game</li></a>
+        <a href="LuvlyDates.html"><li>Random Date Ideas</li></a>
+        <a href="mailto:luvlycontact@gmail.com" target="_blank"><li>Contact</li></a>
+        <a href="https://ourluvlyapp.com/" target="_blank"><li>OURLUVLYAPP.COM</li></a>
+      </ul>
+    </div>
+  </nav>
+</head>
+
+<div id="randomDates">
+  <div id="randomDates">
+    <img src="E:\LUVLY APP\Logo2.png" height = 100>
+    <body style = "text-align:center;">
+ 
+ 
+        <p id = "dateInformation" style =
+            "font-size: 25px; font-weight: bold;">
+            Press this button, and it will tell you what kind of a date you should go on!
+        </p>
+        
+        <button class = "dateButton" onclick = "giveRandomDate()">
+        <link rel="stylesheet" href="css/DateButton.css">
+        What Kind of Date Do We Go On?
+        </button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+         
+        <p id = "dateResult" style =
+            "font-size: 30px; font-weight: bold; color: rgb(4, 118, 144);">
+            You Should Go.....
+        </p>
+      <div>
+         </div>
+      </div>   
+        <!--This is what makes the button fully function-->
+        <script>
+            var randomDateList = [
+              "Flip a coin - whoever wins gets to pick a restaurant for dinner.",
+              "Go to the store and purchase 5 items (of any price value) that remind you of your partner.",
+              "Sit next to each other, and read seperately.",
+              "Go to a restaurant that neither of you have been to before.",
+              "In your fanciest attire, dine in at your favorite fast food place.",
+              "Backyard camping!",
+              "Go rock climbing.",
+              "Hit up the arcade!",
+              "Turn off all of the lights, play your favorite board game by candlelight.",
+              "Karaoke night!",
+              "Order/make a food that you have NEVER tried before.",
+              "Paint portraits of each other.",
+              "Create a time capsule together",
+              "Go to a museum",
+              "Mini golf time!",
+              "Go to a live event, like a concert, comedy night, or something like that!",
+              "Early morning coffee and sunrise!",
+              "Evening ice cream and sunset!",
+              "Go bar hopping! (can be done with thrift stores, coffee shops, game stores, anywhere that can be hopped!)",
+              "Go to an escape room.",
+              "Go to the zoo!",
+              "Get out of town for the night. Book a hotel a few towns over, and find something there. (And try the driving game!)",
+              "Ice/Roller Skating",
+              "Rent some bikes/scooters downtown and enjoy the weather.",
+              "Recreate your favorite childhood field trip!",
+              "Take a recreational class. (Pottery, cooking, painting, etc.)",
+              "Learn a new card game.",
+              "Go on a hike together.",
+              "Geocaching",
+              "Make matching shirts! (Fabric paint and plain white tee shirts are very cheap!)",
+              "Do each other's makeup",
+              "Go to a trampoline park!",
+              "Pick out some cute new houseplants together.",
+              "Go to the drive in.",
+              "The Classic: A picnic.",
+              "Pillow forts and a movie.",
+              "Star gazing!",
+              "Dart/Billiards.",
+              "Indoor arcade stuff, like bumper cars, laser tag, etc.",
+              "Go to a Cat Cafe!",
+              "Less of a one-on-one kind of thing, but host a small dinner party for you and some friends!",
+              "Screw it, get a tattoo.",
+              "Learn a new skill.",
+              "The Classic: Order pizza and watch Netflix.",
+              ];
+            
+            dateInformation.innerHTML = "Clicking the button will tell you what kind of date you should go on!<br><br>";
+             
+            function giveRandomDate() {
+                dateResult.innerHTML =
+                    randomDateList[Math.floor(Math.random() * randomDateList.length)];
+            }
+            </script>

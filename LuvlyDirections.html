@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+    <title>
+        Luvly Directions
+    </title>
+  <link rel="stylesheet" href="css/LuvlyBurger.css">
+</head>
+
+<body>
+<html>
+    <nav role="navigation">
+        <div id="menuToggle">
+          <!--
+          A fake / hidden checkbox is used as click reciever,
+          so you can use the :checked selector on it.
+          -->
+          <input type="checkbox" />
+          
+          <!--
+          Some spans to act as a hamburger.
+          
+          They are acting like a real hamburger,
+          not that McDonalds stuff.
+          -->
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <!--
+          Too bad the menu has to be inside of the button
+          but hey, it's pure CSS magic.
+          -->
+          <ul id="menu">
+            <a href="LuvlyHome.html"><li>Home</li></a>
+            <a href="LuvlyDirections.html"><li>Direction Game</li></a>
+            <a href="LuvlyDates.html"><li>Random Date Ideas</li></a>
+            <a href="mailto:luvlycontact@gmail.com" target="_blank"><li>Contact</li></a>
+            <a href="https://ourluvlyapp.com/" target="_blank"><li>OURLUVLYAPP.COM</li></a>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="directionGame">
+        <img src="E:\LUVLY APP\Logo2.png" height = 100>
+        <body style = "text-align:center;">
+     
+     
+            <p id = "directionInformation" style =
+                "font-size: 25px; font-weight: bold;">
+            </p>
+            
+            <button class = "directionButton" onclick = "giveDirection()">
+            <link rel="stylesheet" href="css/DirectionButton.css">
+            Where Do I Go?
+            </button>
+            <br>
+            <br>
+            <br>
+            <br>
+             
+            <p id = "directionResult" style =
+                "font-size: 30px; font-weight: bold; color: rgb(4, 118, 144);">
+                You Should Go.....
+            </p>
+          <div style="align-items:center;">
+            <div style="width: 350px; height: 300px; background-color: #eba6f8">&nbsp;
+              <p style = "font-size: 15px; font-weight: bold; color: rgb(0, 0, 0);">Last Three Directions:</p>
+            <ul reversed id = "directionPrevious" style =
+                "font-size: 15px; font-weight: bold; color: rgb(0, 0, 0);">
+                <link rel="stylesheet" href="css/DirectionsOrderedList.css">
+                
+          </ul>
+             </div>
+          </div>   
+            <!--This is what makes the button fully function-->
+            <script>
+                 
+                var arr = ["Left", "Straight", "Right", "West", "East", "South", "North"];
+                
+                directionInformation.innerHTML = "Clicking the button will tell you which direction to drive in!<br><br>";
+                 
+                function giveDirection() {
+                    directionResult.innerHTML =
+                        arr[Math.floor(Math.random() * arr.length)];
+                        const listItem = document.querySelector("directionPrevious:last-child");
+                        var ul = document.getElementById("directionPrevious");
+                        var li = document.createElement("li");
+                        const list = document.getElementById('directionPrevious');   
+                        var myListCheck = document.getElementById("directionPrevious").getElementsByTagName("li");
+                        var ulLength = myListCheck.length
+                        if (ulLength <= 2) {
+                          li.appendChild(document.createTextNode(directionResult.innerHTML));
+                          ul.appendChild(li);
+                        } else {
+                          li.appendChild(document.createTextNode(directionResult.innerHTML));
+                          ul.appendChild(li);
+                          list.querySelector('li').remove();
+                          
+                        }
+                     
+                          
+                        
+                       
+                }
+            </script>
+      </div>
+
+
+
+
+
+</body>
+ 
+</html>
